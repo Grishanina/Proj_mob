@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fon"
+    tools:context=".Main">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="10dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+    <ImageView
+        android:id="@+id/menu"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:onClick="Menu"
+        android:scaleType="fitXY"
+        android:src="@drawable/hamburger"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/profilImage"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:onClick="profile"
+        android:scaleType="fitXY"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/RoundedSquare"></com.google.android.material.imageview.ShapeableImageView>
+
+    <TextView
+        android:id="@+id/privetstvie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif"
+        android:gravity="center_horizontal"
+        android:text="С возвращением, Эмиль!"
+        android:textColor="@color/white"
+        android:textSize="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"></TextView>
+
+    <TextView
+        android:id="@+id/vopros"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif"
+        android:text="Каким ты себя ощущаешь сегодня?"
+        android:textColor="@color/edittext"
+        android:textSize="18dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/privetstvie"></TextView>
+
+    <androidx.recyclerview.widget.RecyclerView
+
+        android:id="@+id/moodList"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vopros"></androidx.recyclerview.widget.RecyclerView>
+
+    <ListView
+        android:id="@+id/ListQuotes"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/Nav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/moodList"></ListView>
+
+    <ImageView
+        android:id="@+id/home"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Nav"
+        app:layout_constraintStart_toStartOf="parent"></ImageView>
+
+    <ImageView
+        android:id="@+id/Nav"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="7dp"
+        android:onClick="Listen"
+        android:scaleType="fitXY"
+        android:src="@drawable/nav"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Profile"
+        app:layout_constraintStart_toEndOf="@+id/home"></ImageView>
+
+    <ImageView
+        android:id="@+id/Profile"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="7dp"
+        android:onClick="profile"
+        android:scaleType="fitXY"
+        android:src="@drawable/profile"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Nav"></ImageView>
+</androidx.constraintlayout.widget.ConstraintLayout>
